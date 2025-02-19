@@ -89,7 +89,7 @@ export default function Header3({
                         <button className="header-search-icon">
                           <i className="fal fa-search" />
                         </button>
-                        <input type="text" placeholder="Search products..." />
+                        <input type="text" placeholder="Buscar produtos..." />
                       </div>
                     </form>
                   </div>

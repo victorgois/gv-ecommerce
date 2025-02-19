@@ -54,12 +54,12 @@ export default function Header1({
                         <button className="header-search-icon">
                           <i className="fal fa-search" />
                         </button>
-                        <input type="text" placeholder="Search products..." />
+                        <input type="text" placeholder="Buscar produtos..." />
                       </div>
                     </form>
                   </div>
                   <div className="header-meta header-brand d-flex align-items-center">
-                    <div className="header-meta__lang">
+                    {/* <div className="header-meta__lang">
                       <ul>
                         <li>
                           <Link href="#">
@@ -85,14 +85,14 @@ export default function Header1({
                           </ul>
                         </li>
                       </ul>
-                    </div>
-                    <div className="header-meta__value mr-15">
+                    </div> */}
+                    {/* <div className="header-meta__value mr-15">
                       <select>
                         <option>USD</option>
                         <option>YEAN</option>
                         <option>EURO</option>
                       </select>
-                    </div>
+                    </div> */}
                     <div className="header-meta__social d-flex align-items-center ml-25">
                       <button
                         className="header-cart p-relative tp-cart-toggle"

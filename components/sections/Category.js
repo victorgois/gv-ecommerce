@@ -9,10 +9,10 @@ export default function Category() {
             <div className="col-md-12">
               <div className="tpsection mb-40">
                 <h4 className="tpsection__title">
-                  Top{" "}
+                  Categorias{" "}
                   <span>
                     {" "}
-                    categories{" "}
+                    de produtos{" "}
                     <img src="/assets/img/icon/title-shape-01.jpg" alt="" />
                   </span>
                 </h4>

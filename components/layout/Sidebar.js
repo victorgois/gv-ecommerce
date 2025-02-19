@@ -14,7 +14,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
             What Are You Looking For?
           </span>
           <form action="#">
-            <input type="text" placeholder="Search Products..." />
+            <input type="text" placeholder="Buscar produtos..." />
             <button>
               <i className="fal fa-search" />
             </button>
