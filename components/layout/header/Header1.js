@@ -19,7 +19,7 @@ export default function Header1({
   return (
     <>
       <header>
-        <div className="header-top space-bg">
+        {/* <div className="header-top space-bg">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -35,7 +35,7 @@ export default function Header1({
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="logo-area mt-30 d-none d-xl-block">
           <div className="container">
             <div className="row align-items-center">
@@ -196,7 +196,7 @@ export default function Header1({
                           </Link>
                         </li>
                       </ul>
-                      <div className="daily-offer">
+                      {/* <div className="daily-offer">
                         <ul>
                           <li>
                             <Link href="/shop">Value of the Day</Link>
@@ -208,7 +208,7 @@ export default function Header1({
                             <Link href="/shop">New Arrivals</Link>
                           </li>
                         </ul>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -364,7 +364,7 @@ export default function Header1({
                             <i className="fal fa-phone" />
                           </div>
                           <div className="menu-contact__info">
-                            <Link href="/tel:0123456">908. 408. 501. 89</Link>
+                            <Link href="/tel:0123456">(31) 99999-9999</Link>
                           </div>
                         </div>
                       </li>

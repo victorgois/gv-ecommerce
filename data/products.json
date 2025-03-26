@@ -1,31 +1,81 @@
 [
     {
         "id": 1,
-        "title": "Bradley Burgess 2",
-        "imgf": "product-1.jpg",
-        "imgb": "product-2.jpg",
+        "title": "Filtro OCB Premium",
+        "imgf": "filter-ocb-1.jpg",
+        "imgb": "filter-ocb-2.jpg",
         "category": [
             {
-                "type": "Kids"
+                "type": "Filtros"
             }
         ],
         "color": [
             {
-                "type": "Black"
+                "type": "Branco"
             }
         ],
         "brand": [
             {
-                "type": "Adidas"
+                "type": "OCB"
             }
         ],
         "price": {
             "min": 0,
-            "max": 20
+            "max": 5
         }
     },
     {
         "id": 2,
+        "title": "Bong de Vidro Artesanal",
+        "imgf": "bong-1.jpg",
+        "imgb": "bong-2.jpg",
+        "category": [
+            {
+                "type": "Bongs"
+            }
+        ],
+        "color": [
+            {
+                "type": "Transparente"
+            }
+        ],
+        "brand": [
+            {
+                "type": "GlassArt"
+            }
+        ],
+        "price": {
+            "min": 80,
+            "max": 150
+        }
+    },
+    {
+        "id": 3,
+        "title": "Marlboro Red Box",
+        "imgf": "marlboro-1.jpg",
+        "imgb": "marlboro-2.jpg",
+        "category": [
+            {
+                "type": "Cigarros"
+            }
+        ],
+        "color": [
+            {
+                "type": "Vermelho"
+            }
+        ],
+        "brand": [
+            {
+                "type": "Marlboro"
+            }
+        ],
+        "price": {
+            "min": 10,
+            "max": 15
+        }
+    },
+    {
+        "id": 4,
         "title": "Allie Sharp",
         "imgf": "product-3.jpg",
         "imgb": "product-4.jpg",
@@ -50,7 +100,7 @@
         }
     },
     {
-        "id": 3,
+        "id": 5,
         "title": "Nathaniel Baldwin",
         "imgf": "product-5.jpg",
         "imgb": "product-6.jpg",
@@ -75,7 +125,7 @@
         }
     },
     {
-        "id": 4,
+        "id": 6,
         "title": "Effie Rios",
         "imgf": "product-7.jpg",
         "imgb": "product-8.jpg",
@@ -100,7 +150,7 @@
         }
     },
     {
-        "id": 5,
+        "id": 7,
         "title": "Carolyn Goodwin",
         "imgf": "product-9.jpg",
         "imgb": "product-10.jpg",
@@ -125,7 +175,7 @@
         }
     },
     {
-        "id": 6,
+        "id": 8,
         "title": "Evelyn Patton",
         "imgf": "product-11.jpg",
         "imgb": "product-12.jpg",
@@ -150,7 +200,7 @@
         }
     },
     {
-        "id": 7,
+        "id": 9,
         "title": "Sally Ray",
         "imgf": "product-13.jpg",
         "imgb": "product-14.jpg",
@@ -175,7 +225,7 @@
         }
     },
     {
-        "id": 8,
+        "id": 10,
         "title": "Ora Bowman",
         "imgf": "product-15.jpg",
         "imgb": "product-16.jpg",
@@ -200,7 +250,7 @@
         }
     },
     {
-        "id": 9,
+        "id": 11,
         "title": "Frederick Valdez",
         "imgf": "product-17.jpg",
         "imgb": "product-18.jpg",
@@ -225,7 +275,7 @@
         }
     },
     {
-        "id": 10,
+        "id": 12,
         "title": "Terry Byrd",
         "imgf": "product-19.jpg",
         "imgb": "product-20.jpg",
@@ -250,7 +300,7 @@
         }
     },
     {
-        "id": 11,
+        "id": 13,
         "title": "Angel Jimenez",
         "imgf": "product-21.jpg",
         "imgb": "product-22.jpg",
@@ -275,7 +325,7 @@
         }
     },
     {
-        "id": 12,
+        "id": 14,
         "title": "Phoebe Arnold",
         "imgf": "product-23.jpg",
         "imgb": "product-24.jpg",
@@ -300,7 +350,7 @@
         }
     },
     {
-        "id": 13,
+        "id": 15,
         "title": "Cordelia Ryan",
         "imgf": "product-25.jpg",
         "imgb": "product-26.jpg",
@@ -325,7 +375,7 @@
         }
     },
     {
-        "id": 14,
+        "id": 16,
         "title": "Louisa Conner",
         "imgf": "product-27.jpg",
         "imgb": "product-28.jpg",
@@ -350,7 +400,7 @@
         }
     },
     {
-        "id": 15,
+        "id": 17,
         "title": "Elnora Swanson",
         "imgf": "product-29.jpg",
         "imgb": "product-30.jpg",
@@ -375,7 +425,7 @@
         }
     },
     {
-        "id": 16,
+        "id": 18,
         "title": "Georgie Olson",
         "imgf": "product-31.jpg",
         "imgb": "product-32.jpg",
@@ -400,7 +450,7 @@
         }
     },
     {
-        "id": 17,
+        "id": 19,
         "title": "Frank Cummings",
         "imgf": "product-33.jpg",
         "imgb": "product-34.jpg",
@@ -425,7 +475,7 @@
         }
     },
     {
-        "id": 18,
+        "id": 20,
         "title": "Lula Pope",
         "imgf": "product-35.jpg",
         "imgb": "product-36.jpg",
@@ -450,7 +500,7 @@
         }
     },
     {
-        "id": 19,
+        "id": 21,
         "title": "Brian Silva",
         "imgf": "product-37.jpg",
         "imgb": "product-38.jpg",
@@ -475,7 +525,7 @@
         }
     },
     {
-        "id": 20,
+        "id": 22,
         "title": "Pearl Bowen",
         "imgf": "product-39.jpg",
         "imgb": "product-40.jpg",
@@ -500,7 +550,7 @@
         }
     },
     {
-        "id": 21,
+        "id": 23,
         "title": "Georgia Price",
         "imgf": "product-41.jpg",
         "imgb": "product-42.jpg",
@@ -525,7 +575,7 @@
         }
     },
     {
-        "id": 22,
+        "id": 24,
         "title": "Kenneth Mitchell",
         "imgf": "product-43.jpg",
         "imgb": "product-44.jpg",
@@ -550,7 +600,7 @@
         }
     },
     {
-        "id": 23,
+        "id": 25,
         "title": "Florence Sharp",
         "imgf": "product-45.jpg",
         "imgb": "product-46.jpg",
@@ -575,7 +625,7 @@
         }
     },
     {
-        "id": 24,
+        "id": 26,
         "title": "Myrtie Parks",
         "imgf": "product-47.jpg",
         "imgb": "product-48.jpg",
@@ -600,7 +650,7 @@
         }
     },
     {
-        "id": 25,
+        "id": 27,
         "title": "Dollie Delgado",
         "imgf": "product-49.jpg",
         "imgb": "product-50.jpg",
@@ -625,7 +675,7 @@
         }
     },
     {
-        "id": 26,
+        "id": 28,
         "title": "Jim Warner",
         "imgf": "product-51.jpg",
         "imgb": "product-52.jpg",
@@ -650,7 +700,7 @@
         }
     },
     {
-        "id": 27,
+        "id": 29,
         "title": "Ryan Hale",
         "imgf": "product-53.jpg",
         "imgb": "product-54.jpg",
@@ -675,7 +725,7 @@
         }
     },
     {
-        "id": 28,
+        "id": 30,
         "title": "Louisa Ruiz",
         "imgf": "product-55.jpg",
         "imgb": "product-56.jpg",
@@ -700,7 +750,7 @@
         }
     },
     {
-        "id": 29,
+        "id": 31,
         "title": "Agnes Goodman",
         "imgf": "product-57.jpg",
         "imgb": "product-58.jpg",
@@ -725,7 +775,7 @@
         }
     },
     {
-        "id": 30,
+        "id": 32,
         "title": "Augusta Tran",
         "imgf": "product-59.jpg",
         "imgb": "product-60.jpg",
