@@ -1,20 +1,23 @@
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={`tpsideinfo ${isMobileMenu ? "tp-sidebar-opened" : ""}`}>
         <button className="tpsideinfo__close" onClick={handleMobileMenu}>
-          Close
+          {t("Close")}
           <i className="fal fa-times ml-10" />
         </button>
         <div className="tpsideinfo__search text-center pt-35">
           <span className="tpsideinfo__search-title mb-20">
-            What Are You Looking For?
+            {t("What Are You Looking For?")}
           </span>
           <form action="#">
-            <input type="text" placeholder="Buscar produtos..." />
+            <input type="text" placeholder={t("Search products...")} />
             <button>
               <i className="fal fa-search" />
             </button>
@@ -33,7 +36,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
                 aria-controls="pills-home"
                 aria-selected="true"
               >
-                Menu
+                {t("Menu")}
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -47,7 +50,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
                 aria-controls="pills-profile"
                 aria-selected="false"
               >
-                categories
+                {t("Categories")}
               </button>
             </li>
           </ul>
@@ -71,19 +74,19 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
               <div className="tpsidebar-categories">
                 <ul>
                   <li>
-                    <Link href="/shop">Furniture</Link>
+                    <Link href="/shop">{t("Furniture")}</Link>
                   </li>
                   <li>
-                    <Link href="/shop">Wooden</Link>
+                    <Link href="/shop">{t("Wooden")}</Link>
                   </li>
                   <li>
-                    <Link href="/shop">Lifestyle</Link>
+                    <Link href="/shop">{t("Lifestyle")}</Link>
                   </li>
                   <li>
-                    <Link href="/shop-2">Shopping</Link>
+                    <Link href="/shop-2">{t("Shopping")}</Link>
                   </li>
                   <li>
-                    <Link href="/track">Track Product</Link>
+                    <Link href="/track">{t("Track Product")}</Link>
                   </li>
                 </ul>
               </div>
@@ -92,12 +95,12 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
         </div>
         <div className="tpsideinfo__account-link">
           <Link href="/sign-in">
-            <i className="fal fa-user" /> Login / Register
+            <i className="fal fa-user" /> {t("Login / Register")}
           </Link>
         </div>
         <div className="tpsideinfo__wishlist-link">
           <Link href="/wishlist" target="_parent">
-            <i className="fal fa-heart" /> Wishlist
+            <i className="fal fa-heart" /> {t("Wishlist")}
           </Link>
         </div>
       </div>

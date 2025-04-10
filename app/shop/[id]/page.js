@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const swiperOptions = {
   modules: [Autoplay, Pagination, Navigation],
@@ -46,6 +47,7 @@ const ShopSingleDynamicV1 = () => {
   const abc = useParams();
   const [product, setProduct] = useState({});
   const id = abc.id;
+  const { t } = useTranslation();
   useEffect(() => {
     if (!id) <h1>Loading...</h1>;
     else setProduct(products.find((item) => item.id == id));
@@ -70,7 +72,11 @@ const ShopSingleDynamicV1 = () => {
   const { cart } = useSelector((state) => state.shop) || {};
   return (
     <>
-      <Layout headerStyle={3} footerStyle={1} breadcrumbTitle="Shop Details">
+      <Layout
+        headerStyle={3}
+        footerStyle={1}
+        breadcrumbTitle={t("Shop Details")}
+      >
         <section className="product-area pt-80 pb-50">
           <div className="container">
             <div className="row">
@@ -87,7 +93,9 @@ const ShopSingleDynamicV1 = () => {
               <div className="col-lg-5 col-md-7">
                 <div className="tpproduct-details__content tpproduct-details__sticky">
                   <div className="tpproduct-details__tag-area d-flex align-items-center mb-5">
-                    <span className="tpproduct-details__tag">Dress</span>
+                    <span className="tpproduct-details__tag">
+                      {t("Category")}
+                    </span>
                     <div className="tpproduct-details__rating">
                       <Link href="#">
                         <i className="fas fa-star" />
@@ -99,25 +107,26 @@ const ShopSingleDynamicV1 = () => {
                         <i className="fas fa-star" />
                       </Link>
                     </div>
-                    <a className="tpproduct-details__reviewers">10 Reviews</a>
+                    <a className="tpproduct-details__reviewers">
+                      {`${product?.reviews || 0} ${t("Reviews")}`}
+                    </a>
                   </div>
                   <div className="tpproduct-details__title-area d-flex align-items-center flex-wrap mb-5">
                     <h3 className="tpproduct-details__title">
                       {product?.title}
                     </h3>
-                    <span className="tpproduct-details__stock">In Stock</span>
+                    <span className="tpproduct-details__stock">
+                      {t("In Stock")}
+                    </span>
                   </div>
                   <div className="tpproduct-details__price mb-30">
-                    <del>$9.35</del>
-                    <span>$ {product?.price?.max}</span>
+                    <del>R$ 9,35</del>
+                    <span>R$ {product?.price?.max}</span>
                   </div>
                   <div className="tpproduct-details__pera">
                     <p>
-                      Priyoshop has brought to you the Hijab 3 Pieces Combo Pack
-                      PS23. It is a <br />
-                      completely modern design and you feel comfortable to put
-                      on this hijab. <br />
-                      Buy it at the best price.
+                      Descrição do produto aqui. Este é um exemplo de texto que
+                      deve ser substituído pela descrição real do produto.
                     </p>
                   </div>
                   <div className="tpproduct-details__count d-flex align-items-center flex-wrap mb-25">
@@ -137,7 +146,8 @@ const ShopSingleDynamicV1 = () => {
                     </div>
                     <div className="tpproduct-details__cart ml-20">
                       <button onClick={() => addToCart(product.id)}>
-                        <i className="fal fa-shopping-cart" /> Add To Cart
+                        <i className="fal fa-shopping-cart" />{" "}
+                        {t("Add To Cart")}
                       </button>
                     </div>
                     <div className="tpproduct-details__wishlist ml-20">
@@ -173,35 +183,35 @@ const ShopSingleDynamicV1 = () => {
                     </Link>
                   </div>
                   <div className="tpproduct-details__information tpproduct-details__code">
-                    <p>SKU:</p>
+                    <p>Código:</p>
                     <span>BO1D0MX8SJ</span>
                   </div>
                   <div className="tpproduct-details__information tpproduct-details__categories">
-                    <p>categories:</p>
+                    <p>Categorias:</p>
                     <span>
-                      <Link href="#">T-Shirts,</Link>
+                      <Link href="#">Categoria 1,</Link>
                     </span>
                     <span>
-                      <Link href="#">Tops,</Link>
+                      <Link href="#">Categoria 2,</Link>
                     </span>
                     <span>
-                      <Link href="#">Womens</Link>
+                      <Link href="#">Categoria 3</Link>
                     </span>
                   </div>
                   <div className="tpproduct-details__information tpproduct-details__tags">
                     <p>Tags:</p>
                     <span>
-                      <Link href="#">fashion,</Link>
+                      <Link href="#">tag1,</Link>
                     </span>
                     <span>
-                      <Link href="#">t-shirts,</Link>
+                      <Link href="#">tag2,</Link>
                     </span>
                     <span>
-                      <Link href="#">women</Link>
+                      <Link href="#">tag3</Link>
                     </span>
                   </div>
                   <div className="tpproduct-details__information tpproduct-details__social">
-                    <p>Share:</p>
+                    <p>Compartilhar:</p>
                     <Link href="#">
                       <i className="fab fa-facebook-f" />
                     </Link>
@@ -218,6 +228,37 @@ const ShopSingleDynamicV1 = () => {
                       <i className="fab fa-linkedin" />
                     </Link>
                   </div>
+                  <div className="tpproduct-details__nav mb-30">
+                    <ul className="nav nav-tabs">
+                      <li className="nav-item" onClick={() => handleOnClick(1)}>
+                        <button
+                          className={
+                            activeIndex == 1 ? "nav-links active" : "nav-links"
+                          }
+                        >
+                          {t("Description")}
+                        </button>
+                      </li>
+                      <li className="nav-item" onClick={() => handleOnClick(2)}>
+                        <button
+                          className={
+                            activeIndex == 2 ? "nav-links active" : "nav-links"
+                          }
+                        >
+                          {t("Additional information")}
+                        </button>
+                      </li>
+                      <li className="nav-item" onClick={() => handleOnClick(3)}>
+                        <button
+                          className={
+                            activeIndex == 3 ? "nav-links active" : "nav-links"
+                          }
+                        >
+                          {t("Reviews")} (2)
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div className="col-lg-2 col-md-5">
@@ -229,14 +270,13 @@ const ShopSingleDynamicV1 = () => {
                           <img
                             src="/assets/img/icon/product-det-1.png"
                             alt=""
-                            className="tpproduct-details__img-hover"
                           />
                         </div>
                         <div className="tpproduct-details__condation-text">
                           <p>
-                            Free Shipping apply to all
+                            Frete Grátis para pedidos
                             <br />
-                            orders over $100
+                            acima de R$ 100
                           </p>
                         </div>
                       </div>
@@ -306,41 +346,6 @@ const ShopSingleDynamicV1 = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="tpproduct-details__navtab mb-60">
-                  <div className="tpproduct-details__nav mb-30">
-                    <ul
-                      className="nav nav-tabs pro-details-nav-btn"
-                      id="myTabs"
-                      role="tablist"
-                    >
-                      <li className="nav-item" onClick={() => handleOnClick(1)}>
-                        <button
-                          className={
-                            activeIndex == 1 ? "nav-links active" : "nav-links"
-                          }
-                        >
-                          Description
-                        </button>
-                      </li>
-                      <li className="nav-item" onClick={() => handleOnClick(2)}>
-                        <button
-                          className={
-                            activeIndex == 2 ? "nav-links active" : "nav-links"
-                          }
-                        >
-                          Additional information
-                        </button>
-                      </li>
-                      <li className="nav-item" onClick={() => handleOnClick(3)}>
-                        <button
-                          className={
-                            activeIndex == 3 ? "nav-links active" : "nav-links"
-                          }
-                        >
-                          Reviews (2)
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
                   <div
                     className="tab-content tp-content-tab"
                     id="myTabContent-2"
@@ -400,51 +405,52 @@ const ShopSingleDynamicV1 = () => {
                         <table className="table table-striped">
                           <tbody>
                             <tr>
-                              <td className="add-info">Weight</td>
+                              <td className="add-info">{t("Weight")}</td>
                               <td className="add-info-list"> 2 lbs</td>
                             </tr>
                             <tr>
-                              <td className="add-info">Dimensions</td>
+                              <td className="add-info">{t("Dimensions")}</td>
                               <td className="add-info-list">
                                 {" "}
                                 12 × 16 × 19 in
                               </td>
                             </tr>
                             <tr>
-                              <td className="add-info">Product</td>
+                              <td className="add-info">{t("Product")}</td>
                               <td className="add-info-list">
                                 {" "}
-                                Purchase this product on rag-bone.com
+                                {t("Purchase this product on")} rag-bone.com
                               </td>
                             </tr>
                             <tr>
-                              <td className="add-info">Color</td>
+                              <td className="add-info">{t("Color")}</td>
                               <td className="add-info-list"> Gray, Black</td>
                             </tr>
                             <tr>
-                              <td className="add-info">Size</td>
+                              <td className="add-info">{t("Size")}</td>
                               <td className="add-info-list"> S, M, L, XL</td>
                             </tr>
                             <tr>
-                              <td className="add-info">Model</td>
+                              <td className="add-info">{t("Model")}</td>
                               <td className="add-info-list"> Model </td>
                             </tr>
                             <tr>
-                              <td className="add-info">Shipping</td>
+                              <td className="add-info">{t("Shipping")}</td>
                               <td className="add-info-list">
                                 {" "}
-                                Standard shipping: $5,95L
+                                {t("Standard shipping")}: $5,95L
                               </td>
                             </tr>
                             <tr>
-                              <td className="add-info">Care Info</td>
+                              <td className="add-info">{t("Care Info")}</td>
                               <td className="add-info-list">
                                 {" "}
-                                Machine Wash up to 40ºC/86ºF Gentle Cycle
+                                {t("Machine Wash up to")} 40ºC/86ºF{" "}
+                                {t("Gentle Cycle")}
                               </td>
                             </tr>
                             <tr>
-                              <td className="add-info">Brand</td>
+                              <td className="add-info">{t("Brand")}</td>
                               <td className="add-info-list"> Kazen</td>
                             </tr>
                           </tbody>
@@ -460,7 +466,7 @@ const ShopSingleDynamicV1 = () => {
                     >
                       <div className="product-details-review">
                         <h3 className="tp-comments-title mb-35">
-                          3 reviews for “Wide Cotton Tunic extreme hammer”
+                          3 reviews for "Wide Cotton Tunic extreme hammer"
                         </h3>
                         <div className="latest-comments mb-55">
                           <ul>
@@ -514,7 +520,7 @@ const ShopSingleDynamicV1 = () => {
                                     This is cardigan is a comfortable warm
                                     classic piece. Great to layer with a light
                                     top and you can dress up or down given the
-                                    jewel buttons. I'm 5'8” 128lbs a 34A and the
+                                    jewel buttons. I'm 5'8" 128lbs a 34A and the
                                     Small fit fine.
                                   </p>
                                 </div>
@@ -570,7 +576,7 @@ const ShopSingleDynamicV1 = () => {
                                     This is cardigan is a comfortable warm
                                     classic piece. Great to layer with a light
                                     top and you can dress up or down given the
-                                    jewel buttons. I'm 5'8” 128lbs a 34A and the
+                                    jewel buttons. I'm 5'8" 128lbs a 34A and the
                                     Small fit fine.
                                   </p>
                                 </div>
@@ -626,7 +632,7 @@ const ShopSingleDynamicV1 = () => {
                                     This is cardigan is a comfortable warm
                                     classic piece. Great to layer with a light
                                     top and you can dress up or down given the
-                                    jewel buttons. I'm 5'8” 128lbs a 34A and the
+                                    jewel buttons. I'm 5'8" 128lbs a 34A and the
                                     Small fit fine.
                                   </p>
                                 </div>
@@ -636,14 +642,14 @@ const ShopSingleDynamicV1 = () => {
                         </div>
                         <div className="product-details-comment">
                           <div className="comment-title mb-20">
-                            <h3>Add a review</h3>
+                            <h3>{t("Add a review")}</h3>
                             <p>
-                              Your email address will not be published. Required
-                              fields are marked*
+                              {t("Your email address will not be published")}.{" "}
+                              {t("Required fields are marked")}*
                             </p>
                           </div>
                           <div className="comment-rating mb-20 d-flex">
-                            <span>Overall ratings</span>
+                            <span>{t("Overall ratings")}</span>
                             <ul>
                               <li>
                                 <Link href="#">
@@ -677,14 +683,16 @@ const ShopSingleDynamicV1 = () => {
                               <div className="row">
                                 <div className="col-xxl-12">
                                   <div className="comment-input">
-                                    <textarea placeholder="Your review..." />
+                                    <textarea
+                                      placeholder={t("Your review...")}
+                                    />
                                   </div>
                                 </div>
                                 <div className="col-xxl-6">
                                   <div className="comment-input">
                                     <input
                                       type="text"
-                                      placeholder="Your Name*"
+                                      placeholder={t("Your Name")}
                                     />
                                   </div>
                                 </div>
@@ -692,7 +700,7 @@ const ShopSingleDynamicV1 = () => {
                                   <div className="comment-input">
                                     <input
                                       type="email"
-                                      placeholder="Your Email*"
+                                      placeholder={t("Your Email")}
                                     />
                                   </div>
                                 </div>
@@ -702,7 +710,7 @@ const ShopSingleDynamicV1 = () => {
                                       type="submit"
                                       className="tp-btn pro-submit"
                                     >
-                                      Submit
+                                      {t("Submit")}
                                     </button>
                                   </div>
                                 </div>
@@ -723,7 +731,7 @@ const ShopSingleDynamicV1 = () => {
             <div className="row align-items-center">
               <div className="col-sm-6">
                 <div className="tpsection mb-40">
-                  <h4 className="tpsection__title">Related Products</h4>
+                  <h4 className="tpsection__title">{t("Related Products")}</h4>
                 </div>
               </div>
               <div className="col-sm-6">

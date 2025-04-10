@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "@/hooks/useTranslation";
 import CartShow from "@/components/elements/CartShow";
 import WishListShow from "@/components/elements/WishListShow";
 import Link from "next/link";
@@ -14,6 +15,7 @@ export default function Header1({
   isCartSidebar,
   handleCartSidebar,
 }) {
+  const { t } = useTranslation();
   const [isToggled, setToggled] = useState(true);
   const handleToggle = () => setToggled(!isToggled);
   return (
@@ -25,11 +27,11 @@ export default function Header1({
               <div className="col-12">
                 <div className="header-welcome-text text-start ">
                   <span>
-                    Welcome to our international shop! Enjoy free shipping on
-                    orders $100 up.
+                    Bem-vindo à nossa loja internacional! Aproveite o frete grátis em
+                    pedidos acima de R$ 100.
                   </span>
                   <Link href="/shop">
-                    Shop Now <i className="fal fa-long-arrow-right" />{" "}
+                    Comprar Agora <i className="fal fa-long-arrow-right" />{" "}
                   </Link>
                 </div>
               </div>
@@ -54,7 +56,10 @@ export default function Header1({
                         <button className="header-search-icon">
                           <i className="fal fa-search" />
                         </button>
-                        <input type="text" placeholder="Buscar produtos..." />
+                        <input
+                          type="text"
+                          placeholder={t("Search products...")}
+                        />
                       </div>
                     </form>
                   </div>
@@ -130,7 +135,7 @@ export default function Header1({
                       role="button"
                     >
                       <i className="fal fa-bars" />
-                      categories
+                      {t("categories")}
                     </a>
                     <div
                       className="category-menu category-menu-off"
@@ -139,60 +144,77 @@ export default function Header1({
                       <ul className="cat-menu__list">
                         <li>
                           <Link href="/shop">
-                            <i className="fal fa-user" /> Candles
+                            <i className="fal fa-smoking" />{" "}
+                            {t("Straw Cigarettes")}
                           </Link>
                         </li>
                         <li className="menu-item-has-children">
                           <Link href="/shop">
-                            <i className="fal fa-flower-tulip" /> Handmade
+                            <i className="fal fa-pipe-smoking" />{" "}
+                            {t("Artesanais")}
                           </Link>
                           <ul className="submenu">
                             <li>
-                              <Link href="/shop-2">Chair</Link>
+                              <Link href="/shop-2">{t("Cigarreiras")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop-2">Table</Link>
+                              <Link href="/shop-2">{t("Cachimbos")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop">Wooden</Link>
+                              <Link href="/shop">{t("Cortadores")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop">furniture</Link>
+                              <Link href="/shop">{t("Cigarros Premium")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop">Clock</Link>
+                              <Link href="/shop">{t("Piteiras")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop">Gifts</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop">Crafts</Link>
+                              <Link href="/shop">{t("Fumo de Corda")}</Link>
                             </li>
                           </ul>
                         </li>
                         <li>
                           <Link href="/shop">
-                            <i className="fal fa-shoe-prints" /> Gift Sets
+                            <i className="fal fa-box-alt" />{" "}
+                            {t("Kits Presente")}
                           </Link>
                         </li>
                         <li>
                           <Link href="/shop">
-                            <i className="fal fa-smile" /> Plastic Gifts
+                            <i className="fal fa-lightbulb-on" />{" "}
+                            {t("Acessórios Plásticos")}
                           </Link>
                         </li>
                         <li>
                           <Link href="/shop">
-                            <i className="fal fa-futbol" /> Handy Cream
+                            <i className="fal fa-fire-alt" /> {t("Isqueiros")}
                           </Link>
                         </li>
                         <li>
                           <Link href="/shop">
-                            <i className="fal fa-crown" /> Cosmetics
+                            <i className="fal fa-leaf" /> {t("Tabacos")}
                           </Link>
                         </li>
                         <li>
                           <Link href="/shop">
-                            <i className="fal fa-gift" /> Silk Accessories
+                            <i className="fal fa-circle" /> {t("Cinzeiros")}
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/shop">
+                            <i className="fal fa-file" /> {t("Rolling Papers")}
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/shop">
+                            <i className="fal fa-archive" />{" "}
+                            {t("Tobacco Pouches")}
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/shop">
+                            <i className="fal fa-box" /> {t("Humidors")}
                           </Link>
                         </li>
                       </ul>
@@ -217,139 +239,177 @@ export default function Header1({
                     <nav id="mobile-menu">
                       <ul>
                         <li className="has-dropdown">
-                          <Link href="/">Home</Link>
+                          <Link href="/">{t("Home")}</Link>
                           <ul className="submenu">
                             <li>
-                              <Link href="/">Wooden Home</Link>
+                              <Link href="/">{t("Tabacaria Tradicional")}</Link>
                             </li>
                             <li>
-                              <Link href="/index-2">Fashion Home</Link>
+                              <Link href="/index-2">
+                                {t("Tabacaria Moderna")}
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/index-3">Furniture Home</Link>
+                              <Link href="/index-3">
+                                {t("Cigarros Artesanais")}
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/index-4">Cosmetics Home</Link>
+                              <Link href="/index-4">
+                                {t("Tabacos Especiais")}
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/index-5">Food Grocery</Link>
+                              <Link href="/index-5">
+                                {t("Acessórios Premium")}
+                              </Link>
                             </li>
                           </ul>
                         </li>
                         <li className="has-dropdown">
-                          <Link href="/shop">Shop</Link>
+                          <Link href="/shop">{t("Shop")}</Link>
                           <ul className="submenu">
                             <li>
-                              <Link href="/shop">Shop</Link>
+                              <Link href="/shop">{t("Shop")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop-2">Shop 2</Link>
+                              <Link href="/shop-2">{t("Shop 2")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop-details">Shop Details </Link>
+                              <Link href="/shop-details">
+                                {t("Shop Details")}
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/shop-details-2">Shop Details 2</Link>
+                              <Link href="/shop-details-2">
+                                {t("Shop Details 2")}
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/shop-location">Shop Location</Link>
+                              <Link href="/shop-location">
+                                {t("Shop Location")}
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/cart">Cart</Link>
+                              <Link href="/cart">{t("Cart")}</Link>
                             </li>
                             <li>
-                              <Link href="/sign-in">Sign In</Link>
+                              <Link href="/sign-in">{t("Sign In")}</Link>
                             </li>
                             <li>
-                              <Link href="/checkout">Checkout</Link>
+                              <Link href="/checkout">{t("Checkout")}</Link>
                             </li>
                             <li>
-                              <Link href="/wishlist">Wishlist</Link>
+                              <Link href="/wishlist">{t("Wishlist")}</Link>
                             </li>
                             <li>
-                              <Link href="/track">Product Track</Link>
+                              <Link href="/track">{t("Product Track")}</Link>
                             </li>
                           </ul>
                         </li>
                         <li className="has-dropdown has-megamenu">
-                          <Link href="/about">Pages</Link>
+                          <Link href="/about">{t("Pages")}</Link>
                           <ul className="submenu mega-menu">
                             <li>
-                              <a className="mega-menu-title">Page layout</a>
+                              <a className="mega-menu-title">
+                                {t("Tipos de Produtos")}
+                              </a>
                               <ul>
                                 <li>
-                                  <Link href="/shop">Shop filters v1</Link>
+                                  <Link href="/shop">
+                                    {t("Cigarros de Palha")}
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link href="/shop-2">Shop filters v2</Link>
+                                  <Link href="/shop-2">
+                                    {t("Tabacos Especiais")}
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link href="/shop-details">Shop sidebar</Link>
+                                  <Link href="/shop-details">
+                                    {t("Cachimbos")}
+                                  </Link>
                                 </li>
                                 <li>
                                   <Link href="/shop-details-2">
-                                    Shop Right sidebar
+                                    {t("Acessórios Premium")}
                                   </Link>
                                 </li>
                                 <li>
                                   <Link href="/shop-location">
-                                    Shop List view
+                                    {t("Kits Exclusivos")}
                                   </Link>
                                 </li>
                               </ul>
                             </li>
                             <li>
-                              <a className="mega-menu-title">Page layout</a>
+                              <a className="mega-menu-title">
+                                {t("Informações")}
+                              </a>
                               <ul>
                                 <li>
-                                  <Link href="/about">About</Link>
+                                  <Link href="/about">{t("Sobre Nós")}</Link>
                                 </li>
                                 <li>
-                                  <Link href="/cart">Cart</Link>
+                                  <Link href="/cart">{t("Carrinho")}</Link>
                                 </li>
                                 <li>
-                                  <Link href="/checkout">Checkout</Link>
+                                  <Link href="/checkout">
+                                    {t("Finalizar Compra")}
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link href="/sign-in">Sign In</Link>
+                                  <Link href="/sign-in">{t("Entrar")}</Link>
                                 </li>
                                 <li>
-                                  <Link href="/sign-in">Log In</Link>
+                                  <Link href="/sign-in">{t("Cadastrar")}</Link>
                                 </li>
                               </ul>
                             </li>
                             <li>
-                              <a className="mega-menu-title">Page type</a>
+                              <a className="mega-menu-title">
+                                {t("Utilitários")}
+                              </a>
                               <ul>
                                 <li>
-                                  <Link href="/track">Product Track</Link>
+                                  <Link href="/track">
+                                    {t("Rastrear Pedido")}
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link href="/wishlist">Wishlist</Link>
+                                  <Link href="/wishlist">
+                                    {t("Lista de Desejos")}
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link href="/not-found">404 / Error</Link>
+                                  <Link href="/not-found">
+                                    {t("404 / Erro")}
+                                  </Link>
                                 </li>
                                 <li>
-                                  <Link href="/coming-soon">Coming Soon</Link>
+                                  <Link href="/coming-soon">
+                                    {t("Lançamentos")}
+                                  </Link>
                                 </li>
                               </ul>
                             </li>
                           </ul>
                         </li>
                         <li className="has-dropdown">
-                          <Link href="/blog">Blog</Link>
+                          <Link href="/blog">{t("Blog")}</Link>
                           <ul className="submenu">
                             <li>
-                              <Link href="/blog">Blog</Link>
+                              <Link href="/blog">{t("Blog")}</Link>
                             </li>
                             <li>
-                              <Link href="/blog-details">Blog Details</Link>
+                              <Link href="/blog-details">
+                                {t("Blog Details")}
+                              </Link>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          <Link href="/contact">Contact</Link>
+                          <Link href="/contact">{t("Contact")}</Link>
                         </li>
                       </ul>
                     </nav>
@@ -374,7 +434,7 @@ export default function Header1({
                             <i className="fal fa-map-marker-alt" />
                           </div>
                           <div className="menu-contact__info">
-                            <Link href="/shop-location">Find Store</Link>
+                            <Link href="/shop-location">{t("Find Store")}</Link>
                           </div>
                         </div>
                       </li>
