@@ -35,8 +35,8 @@ export default function HomeContent() {
       <Slider1 />
       <Product1 />
       <Category />
-      <DealProduct1 />
-      <Shop />
+      {/* <DealProduct1 />
+      <Shop /> */}
     </>
   );
 }
