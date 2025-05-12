@@ -20,7 +20,7 @@ export default function Header({ handleMobileMenu }) {
             <div className="col-xl-3 col-lg-3 col-md-6 col-6">
               <div className="logo">
                 <Link href="/">
-                  <img src="/assets/img/logo/logo.png" alt="Logo" />
+                  <img src="/assets/img/logo/logo_resized.png" alt="Logo" />
                 </Link>
               </div>
             </div>

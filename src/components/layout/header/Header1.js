@@ -42,11 +42,11 @@ export default function Header1({
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-3">
-                <div className="logo">
+                {/* <div className="logo">
                   <Link href="/">
                     <img src="/assets/img/logo/logo.png" alt="logo" />
                   </Link>
-                </div>
+                </div> */}
               </div>
               <div className="col-xl-10 col-lg-9">
                 <div className="header-meta-info d-flex align-items-center justify-content-between">

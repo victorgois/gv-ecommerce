@@ -1,86 +1,79 @@
-'use client'
-import { addCart } from "@/features/shopSlice"
-import { addQty, deleteWishlist } from "@/features/wishlistSlice"
-import Link from "next/link"
-import products from "@/data/products"
-import { useDispatch, useSelector } from "react-redux"
+"use client";
+import { addCart } from "@/features/shopSlice";
+import { addQty, deleteWishlist } from "@/features/wishlistSlice";
+import Link from "next/link";
+import products from "@/data/products";
+import { useDispatch, useSelector } from "react-redux";
 
 const WishlistItems = () => {
-    const { wishlist } = useSelector((state) => state.wishlist) || {}
+  const { wishlist } = useSelector((state) => state.wishlist) || {};
+  const { isAuthenticated } = useSelector((state) => state.user);
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const addToCart = (id) => {
-        const item = products?.find((item) => item.id === id)
-        dispatch(addCart({ product: item }))
-    }
+  const addToCart = (id) => {
+    const item = products?.find((item) => item.id === id);
+    dispatch(
+      addCart({
+        product: item,
+        requireAuth: true,
+        isAuthenticated,
+      })
+    );
+  };
 
-    // delete cart item
-    const deleteCartHandler = (id) => {
-        dispatch(deleteWishlist(id))
-    }
+  // delete cart item
+  const deleteCartHandler = (id) => {
+    dispatch(deleteWishlist(id));
+  };
 
-    // qty handler
-    const qtyHandler = (id, qty) => {
-        dispatch(addQty({ id, qty }))
-    }
+  // qty handler
+  const qtyHandler = (id, qty) => {
+    dispatch(addQty({ id, qty }));
+  };
 
-    console.log(wishlist)
+  console.log(wishlist);
 
-    return (
-        <>
-            {wishlist?.map((item) => (
-                <tr className="cart-item" key={item.id}>
-                    <td className="product-thumbnail">
-                        <Link href={`/shop/${item.id}`}>
-                            <img
-                                src={`/assets/img/product/${item.imgf}`} alt="cart added product" />
-                        </Link>
-                    </td>
+  return (
+    <>
+      {wishlist?.map((item, i) => (
+        <tr key={i}>
+          <td className="product-thumbnail">
+            <Link href={`/shop/${item.id}`}>
+              <img src={`/assets/img/product/${item.imgf}`} alt="product img" />
+            </Link>
+          </td>
+          <td className="product-name">
+            <Link href={`/shop/${item.id}`}>{item.title}</Link>
+          </td>
+          <td className="product-price">
+            <span className="amount">R$ {item.price?.max},00</span>
+          </td>
+          <td className="product-quantity">
+            <span>Em estoque</span>
+          </td>
+          <td className="product-subtotal">
+            <span className="amount">R$ {item.price?.max},00</span>
+          </td>
+          <td className="product-add-to-cart">
+            <button onClick={() => addToCart(item.id)}>
+              <i className="fal fa-shopping-cart"></i>
+              <span>Adicionar ao carrinho</span>
+            </button>
+          </td>
+          <td className="product-remove">
+            <button
+              className="remove"
+              title="Remove this product"
+              onClick={() => deleteCartHandler(item.id)}
+            >
+              <i className="fal fa-times"></i>
+            </button>
+          </td>
+        </tr>
+      ))}
+    </>
+  );
+};
 
-                    <td className="product-name">
-                        <Link href={`/shop/${item.id}`}>
-                            {item.title}
-                        </Link>
-                    </td>
-
-                    <td className="product-price">${item.price.max}</td>
-
-                    <td className="product-quantity">
-                        <div className="item-quantity">
-                            <input
-                                type="number"
-                                className="qty"
-                                name="qty"
-                                defaultValue={item?.qty}
-                                min={1}
-                                onChange={(e) =>
-                                    qtyHandler(item?.id, e.target.value)
-                                }
-                            />
-                        </div>
-                    </td>
-
-                    <td className="product-subtotal">
-                        <span className="amount">
-                            ${(item?.qty * item?.price.max).toFixed(2)}
-                        </span>
-                    </td>
-                    <td className="product-add-to-cart">
-                        <a onClick={() => addToCart(item.id)} className="tp-btn tp-color-btn  tp-wish-cart banner-animation">Add To Cart</a>
-                    </td>
-                    <td className="product-remove">
-                        <button
-                            onClick={() => deleteCartHandler(item?.id)}
-                            className="remove"
-                        >
-                            <span className="flaticon-dustbin">Remove</span>
-                        </button>
-                    </td>
-                </tr>
-            ))}
-        </>
-    )
-}
-
-export default WishlistItems
+export default WishlistItems;

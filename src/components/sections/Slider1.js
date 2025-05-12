@@ -39,12 +39,12 @@ export default function Slider1() {
                       <div className="tp-slide-item">
                         <div className="tp-slide-item__content">
                           <h4 className="tp-slide-item__sub-title">
-                            Acessórios
+                            Cigarros de Palha
                           </h4>
                           <h3 className="tp-slide-item__title mb-25">
-                            com até
+                            com até{" "}
                             <i>
-                              40% de desconto
+                              20% de desconto
                               <img
                                 src="/assets/img/icon/title-shape-02.jpg"
                                 alt=""
@@ -60,7 +60,7 @@ export default function Slider1() {
                           </Link>
                         </div>
                         <div className="tp-slide-item__img">
-                          <img src="/assets/img/slider/banner-1.jpg" alt="" />
+                          <img src="/assets/img/slider/banner-1.png" alt="" />
                         </div>
                       </div>
                     </SwiperSlide>
@@ -68,12 +68,12 @@ export default function Slider1() {
                       <div className="tp-slide-item">
                         <div className="tp-slide-item__content">
                           <h4 className="tp-slide-item__sub-title">
-                            Acessórios
+                            Cigarros de Palha
                           </h4>
                           <h3 className="tp-slide-item__title mb-25">
                             com até{" "}
                             <i>
-                              35% de desconto
+                              20% de desconto
                               <img
                                 src="/assets/img/icon/title-shape-02.jpg"
                                 alt=""
@@ -89,7 +89,7 @@ export default function Slider1() {
                           </Link>
                         </div>
                         <div className="tp-slide-item__img">
-                          <img src="/assets/img/slider/banner-2.jpg" alt="" />
+                          <img src="/assets/img/slider/banner-1.png" alt="" />
                         </div>
                       </div>
                     </SwiperSlide>
@@ -97,12 +97,12 @@ export default function Slider1() {
                       <div className="tp-slide-item">
                         <div className="tp-slide-item__content">
                           <h4 className="tp-slide-item__sub-title">
-                            Acessórios
+                            Cigarros de Palha
                           </h4>
                           <h3 className="tp-slide-item__title mb-25">
                             com até{" "}
                             <i>
-                              45% de desconto
+                              20% de desconto
                               <img
                                 src="/assets/img/icon/title-shape-02.jpg"
                                 alt=""
@@ -118,7 +118,7 @@ export default function Slider1() {
                           </Link>
                         </div>
                         <div className="tp-slide-item__img">
-                          <img src="/assets/img/slider/banner-3.jpg" alt="" />
+                          <img src="/assets/img/slider/banner-1.png" alt="" />
                         </div>
                       </div>
                     </SwiperSlide>

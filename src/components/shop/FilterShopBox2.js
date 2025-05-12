@@ -1,124 +1,136 @@
-'use client'
-import { addCart } from "@/features/shopSlice"
-import { addWishlist } from "@/features/wishlistSlice"
-import { Fragment } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import products from "../../data/products"
+"use client";
+import { addCart } from "@/features/shopSlice";
+import { addWishlist, addWishlistWithAuth } from "@/features/wishlistSlice";
+import { Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import products from "../../data/products";
 import {
-    addPerPage,
-    addSort,
-    addprice,
-    clearBrand,
-    clearCategory,
-    clearColor,
-} from "../../features/filterSlice"
+  addPerPage,
+  addSort,
+  addprice,
+  clearBrand,
+  clearCategory,
+  clearColor,
+} from "../../features/filterSlice";
 import {
-    clearBrandToggle,
-    clearCategoryToggle,
-    clearColorToggle,
-} from "../../features/productSlice"
-import ShopCard from "./ShopCard"
+  clearBrandToggle,
+  clearCategoryToggle,
+  clearColorToggle,
+} from "../../features/productSlice";
+import ShopCard from "./ShopCard";
 
 const FilterShopBox2 = ({ itemStart, itemEnd }) => {
-    const { shopList, shopSort } = useSelector((state) => state.filter)
-    const {
-        price,
+  const { shopList, shopSort } = useSelector((state) => state.filter);
+  const { isAuthenticated } = useSelector((state) => state.user);
+  const { price, category, color, brand } = shopList || {};
 
-        category,
-        color,
-        brand,
-    } = shopList || {}
+  const { sort, perPage } = shopSort;
 
-    const { sort, perPage } = shopSort
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  const addToCart = (id) => {
+    const item = products?.find((item) => item.id === id);
+    dispatch(
+      addCart({
+        product: item,
+        requireAuth: true,
+        isAuthenticated,
+      })
+    );
+  };
 
-    const addToCart = (id) => {
-        const item = products?.find((item) => item.id === id)
-        dispatch(addCart({ product: item }))
-    }
+  const addToWishlist = (id) => {
+    const item = products?.find((item) => item.id === id);
+    dispatch(
+      addWishlistWithAuth({
+        product: item,
+        requireAuth: true,
+      })
+    );
+  };
 
-    const addToWishlist = (id) => {
-        const item = products?.find((item) => item.id === id)
-        dispatch(addWishlist({ product: item }))
-    }
+  // location filter
+  const priceFilter = (item) =>
+    item?.price?.min >= price?.min && item?.price?.max <= price?.max;
 
+  // // product-type filter
 
-    // location filter
-    const priceFilter = (item) =>
-        item?.price?.min >= price?.min && item?.price?.max <= price?.max
+  // product-type filter
+  const categoryFilter = (item) =>
+    category?.length !== 0 && item?.category !== undefined
+      ? category?.includes(
+          item?.category[0]?.type.toLocaleLowerCase().split(" ").join("-")
+        )
+      : item;
 
-    // // product-type filter
+  // product-type filter
+  const colorFilter = (item) =>
+    color?.length !== 0 && item?.color !== undefined
+      ? color?.includes(
+          item?.color[0]?.type.toLocaleLowerCase().split(" ").join("-")
+        )
+      : item;
 
+  // product-type filter
+  const brandFilter = (item) =>
+    brand?.length !== 0 && item?.brand !== undefined
+      ? brand?.includes(
+          item?.brand[0]?.type.toLocaleLowerCase().split(" ").join("-")
+        )
+      : item;
 
+  // sort filter
+  const sortFilter = (a, b) =>
+    sort === "des" ? a.id > b.id && -1 : a.id < b.id && -1;
 
-    // product-type filter
-    const categoryFilter = (item) =>
-        category?.length !== 0 && item?.category !== undefined ? category?.includes(item?.category[0]?.type.toLocaleLowerCase().split(" ").join("-")) : item
+  let content = products
+    .slice(itemStart, itemEnd)
+    ?.filter(priceFilter)
+    ?.filter(categoryFilter)
+    ?.filter(colorFilter)
+    ?.filter(brandFilter)
+    ?.sort(sortFilter)
+    .slice(perPage.start, perPage.end !== 0 ? perPage.end : 10)
+    ?.map((item, i) => (
+      <Fragment key={i}>
+        <ShopCard
+          item={item}
+          addToCart={addToCart}
+          addToWishlist={addToWishlist}
+        />
+      </Fragment>
+      // End all products
+    ));
 
-    // product-type filter
-    const colorFilter = (item) =>
-        color?.length !== 0 && item?.color !== undefined ? color?.includes(item?.color[0]?.type.toLocaleLowerCase().split(" ").join("-")) : item
+  // sort handler
+  const sortHandler = (e) => {
+    dispatch(addSort(e.target.value));
+  };
 
-    // product-type filter
-    const brandFilter = (item) =>
-        brand?.length !== 0 && item?.brand !== undefined ? brand?.includes(item?.brand[0]?.type.toLocaleLowerCase().split(" ").join("-")) : item
+  // per page handler
+  const perPageHandler = (e) => {
+    const pageData = JSON.parse(e.target.value);
+    dispatch(addPerPage(pageData));
+  };
 
-    // sort filter
-    const sortFilter = (a, b) =>
-        sort === "des" ? a.id > b.id && -1 : a.id < b.id && -1
+  // clear all filters
+  const clearAll = () => {
+    dispatch(addprice({ min: 0, max: 100 }));
 
-    let content = products.slice(itemStart, itemEnd)
-        ?.filter(priceFilter)
+    dispatch(clearCategory());
+    dispatch(clearCategoryToggle());
 
-        ?.filter(categoryFilter)
-        ?.filter(colorFilter)
-        ?.filter(brandFilter)
-        ?.sort(sortFilter).slice(perPage.start, perPage.end !== 0 ? perPage.end : 10)?.map((item, i) => (
-            <Fragment key={i}>
-                <ShopCard item={item} addToCart={addToCart} addToWishlist={addToWishlist} />
-            </Fragment>
-            // End all products
-        ))
+    dispatch(clearColor());
+    dispatch(clearColorToggle());
 
-    // sort handler
-    const sortHandler = (e) => {
-        dispatch(addSort(e.target.value))
-    }
+    dispatch(clearBrand());
+    dispatch(clearBrandToggle());
 
-    // per page handler
-    const perPageHandler = (e) => {
-        const pageData = JSON.parse(e.target.value)
-        dispatch(addPerPage(pageData))
-    }
+    dispatch(addSort(""));
+    dispatch(addPerPage({ start: 0, end: 0 }));
+  };
 
-    // clear all filters
-    const clearAll = () => {
-        dispatch(addprice({ min: 0, max: 100 }))
+  return <>{content}</>;
+};
 
-
-
-
-        dispatch(clearCategory())
-        dispatch(clearCategoryToggle())
-
-        dispatch(clearColor())
-        dispatch(clearColorToggle())
-
-        dispatch(clearBrand())
-        dispatch(clearBrandToggle())
-
-        dispatch(addSort(""))
-        dispatch(addPerPage({ start: 0, end: 0 }))
-    }
-
-
-    return (
-        <>
-            {content}
-
-        </>
-    )
-}
-
-export default FilterShopBox2
+export default FilterShopBox2;

@@ -149,6 +149,10 @@ export const translations = {
   Success: "Sucesso",
   "Please wait": "Por favor, aguarde",
   Loading: "Carregando",
+  "Login required": "Login necessário",
+  "You need to be logged in": "Você precisa estar logado",
+  Cancel: "Cancelar",
+  Continue: "Continuar",
 
   // Menus e Navegação
   "My Orders": "Meus Pedidos",

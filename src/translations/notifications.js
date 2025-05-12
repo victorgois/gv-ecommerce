@@ -17,6 +17,8 @@ export const notifications = {
     outOfStock: "Produto esgotado",
     paymentFailed: "Falha no pagamento. Tente novamente.",
     serverError: "Erro no servidor. Tente novamente mais tarde.",
+    loginRequired:
+      "Você precisa estar logado para adicionar itens ao carrinho ou favoritos.",
   },
   info: {
     loading: translations["Loading"],

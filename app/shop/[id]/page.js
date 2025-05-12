@@ -2,6 +2,7 @@
 import Layout from "@/components/layout/Layout";
 import products from "@/data/products";
 import { addCart, addQty } from "@/features/shopSlice";
+import { addWishlistWithAuth } from "@/features/wishlistSlice";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -48,6 +49,8 @@ const ShopSingleDynamicV1 = () => {
   const [product, setProduct] = useState({});
   const id = abc.id;
   const { t } = useTranslation();
+  const { isAuthenticated } = useSelector((state) => state.user);
+
   useEffect(() => {
     if (!id) <h1>Loading...</h1>;
     else setProduct(products.find((item) => item.id == id));
@@ -63,8 +66,25 @@ const ShopSingleDynamicV1 = () => {
 
   const addToCart = (id) => {
     const item = products?.find((item) => item.id === id);
-    dispatch(addCart({ product: item }));
+    dispatch(
+      addCart({
+        product: item,
+        requireAuth: true,
+        isAuthenticated,
+      })
+    );
   };
+
+  const addToWishlist = (id) => {
+    const item = products?.find((item) => item.id === id);
+    dispatch(
+      addWishlistWithAuth({
+        product: item,
+        requireAuth: true,
+      })
+    );
+  };
+
   const qtyHandler = (id, qty) => {
     dispatch(addQty({ id, qty }));
   };
@@ -151,7 +171,7 @@ const ShopSingleDynamicV1 = () => {
                       </button>
                     </div>
                     <div className="tpproduct-details__wishlist ml-20">
-                      <button>
+                      <button onClick={() => addToWishlist(product.id)}>
                         <i className="fal fa-heart" />
                       </button>
                     </div>

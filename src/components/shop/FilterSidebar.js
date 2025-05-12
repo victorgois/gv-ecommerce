@@ -1,5 +1,5 @@
 import BrandLevel from "../filter/Brand";
-import CategoryLevel from "../filter/categories";
+import CategoryLevel from "../filter/Categories";
 import ColorLevel from "../filter/Colors";
 import PriceRangeSlider from "../filter/PriceRangeSlider";
 

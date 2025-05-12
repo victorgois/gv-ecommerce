@@ -10,11 +10,11 @@ export default function Footer1() {
               <div className="row">
                 <div className="col-lg-3 col-md-4 col-sm-6">
                   <div className="footer-widget footer-col-1 mb-40">
-                    <div className="footer-logo mb-30">
+                    {/* <div className="footer-logo mb-30">
                       <Link href="/">
                         <img src="/assets/img/logo/logo.png" alt="logo" />
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="footer-content">
                       <p>
                         GV Distribuidora é uma empresa de distribuição de
