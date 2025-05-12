@@ -396,19 +396,6 @@ export default function Header1({
                           </ul>
                         </li>
                         <li className="has-dropdown">
-                          <Link href="/blog">{t("Blog")}</Link>
-                          <ul className="submenu">
-                            <li>
-                              <Link href="/blog">{t("Blog")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/blog-details">
-                                {t("Blog Details")}
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
                           <Link href="/contact">{t("Contact")}</Link>
                         </li>
                       </ul>

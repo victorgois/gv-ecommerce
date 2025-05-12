@@ -106,7 +106,6 @@ export const translations = {
   Home: "Início",
   Shop: "Loja",
   About: "Sobre",
-  Blog: "Blog",
   Pages: "Páginas",
   Search: "Buscar",
   "Search for products": "Buscar produtos",
@@ -232,7 +231,6 @@ export const translations = {
   "Log In": "Entrar",
   "404 / Error": "404 / Erro",
   "Coming Soon": "Em Breve",
-  "Blog Details": "Detalhes do Blog",
 
   // Novos produtos de tabacaria
   "Rolling Papers": "Papel para Enrolar",

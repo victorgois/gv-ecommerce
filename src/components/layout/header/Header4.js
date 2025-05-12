@@ -215,17 +215,6 @@ export default function Header4({
                           </ul>
                         </li>
                         <li className="has-dropdown">
-                          <Link href="/blog">Blog</Link>
-                          <ul className="submenu">
-                            <li>
-                              <Link href="/blog">Blog</Link>
-                            </li>
-                            <li>
-                              <Link href="/blog-details">Blog Details</Link>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
                           <Link href="/contact">Contact</Link>
                         </li>
                       </ul>
