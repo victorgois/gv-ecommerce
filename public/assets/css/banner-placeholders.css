@@ -1,0 +1,131 @@
+/* Placeholders para banners */
+.banner-thumb-01 {
+  background-color: #2c3e50;
+  min-height: 300px;
+}
+
+.banner-thumb-02 {
+  background-color: #34495e;
+  min-height: 300px;
+}
+
+.banner-thumb-03 {
+  background-color: #2c3e50;
+  min-height: 300px;
+}
+
+.banner-thumb-04 {
+  background-color: #34495e;
+  min-height: 300px;
+}
+
+.banner-2-01 {
+  background-color: #2c3e50;
+  min-height: 200px;
+}
+
+.banner-2-02 {
+  background-color: #34495e;
+  min-height: 200px;
+}
+
+.banner-2-03 {
+  background-color: #2c3e50;
+  min-height: 200px;
+}
+
+.banner-2-04 {
+  background-color: #34495e;
+  min-height: 200px;
+}
+
+.banner-03-01 {
+  background-color: #2c3e50;
+  min-height: 250px;
+}
+
+.banner-03-02 {
+  background-color: #34495e;
+  min-height: 250px;
+}
+
+.banner-03-03 {
+  background-color: #2c3e50;
+  min-height: 250px;
+}
+
+.banner-offer-01 {
+  background-color: #34495e;
+  min-height: 400px;
+}
+
+.banner-offer-02 {
+  background-color: #2c3e50;
+  min-height: 400px;
+}
+
+.banner-bg-05 {
+  background-color: #34495e;
+  min-height: 500px;
+}
+
+/* Cores alternativas para variação */
+.banner-alt-1 {
+  background-color: #1a1a1a;
+}
+
+.banner-alt-2 {
+  background-color: #2d2d2d;
+}
+
+.banner-alt-3 {
+  background-color: #404040;
+}
+
+.banner-alt-4 {
+  background-color: #4d4d4d;
+}
+
+/* Placeholder para breadcrumb */
+.breadcrumb-placeholder {
+  background-color: #2c3e50;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-placeholder .tp-breadcrumb__title {
+  color: #ffffff;
+}
+
+.breadcrumb-placeholder .tp-breadcrumb__link span {
+  color: #ffffff;
+}
+
+.breadcrumb-placeholder .tp-breadcrumb__link .breadcrumb-item-active a {
+  color: #ffffff;
+}
+
+.breadcrumb-placeholder .tp-breadcrumb__link .breadcrumb-item-active::before {
+  background-color: #ffffff;
+}
+
+/* Placeholders para About */
+.about-banner-1 {
+  background-color: #2c3e50;
+  min-height: 400px;
+  width: 100%;
+}
+
+.about-banner-2 {
+  background-color: #34495e;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* Placeholder para Track */
+.track-bg {
+  background-color: #2c3e50;
+  min-height: 300px;
+  width: 100%;
+}

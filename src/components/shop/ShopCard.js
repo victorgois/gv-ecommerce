@@ -51,7 +51,7 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
           <div className="tpproduct__ratingarea">
             <div className="d-flex align-items-center justify-content-between">
               <div className="tpproductdot">
-                <Link
+                {/* <Link
                   className="tpproductdot__variationitem"
                   href={`/shop/${item.id}`}
                 >
@@ -59,8 +59,8 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                     <span className="tpproductdot__termshape-bg" />
                     <span className="tpproductdot__termshape-border" />
                   </div>
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   className="tpproductdot__variationitem"
                   href={`/shop/${item.id}`}
                 >
@@ -68,8 +68,8 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                     <span className="tpproductdot__termshape-bg red-product-bg" />
                     <span className="tpproductdot__termshape-border red-product-border" />
                   </div>
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   className="tpproductdot__variationitem"
                   href={`/shop/${item.id}`}
                 >
@@ -77,8 +77,8 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                     <span className="tpproductdot__termshape-bg orange-product-bg" />
                     <span className="tpproductdot__termshape-border orange-product-border" />
                   </div>
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   className="tpproductdot__variationitem"
                   href={`/shop/${item.id}`}
                 >
@@ -86,9 +86,9 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                     <span className="tpproductdot__termshape-bg purple-product-bg" />
                     <span className="tpproductdot__termshape-border purple-product-border" />
                   </div>
-                </Link>
+                </Link> */}
               </div>
-              <div className="tpproduct__rating">
+              {/* <div className="tpproduct__rating">
                 <ul>
                   <li>
                     <Link href="#">
@@ -111,7 +111,7 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                     <span>(81)</span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

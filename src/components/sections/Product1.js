@@ -52,14 +52,6 @@ export default function Product1() {
                     >
                       Em Promoção
                     </button>
-                    {/* <button
-                      className={
-                        activeIndex == 4 ? "nav-link active" : "nav-link"
-                      }
-                      onClick={() => handleOnClick(4)}
-                    >
-                      Best Rated
-                    </button> */}
                   </div>
                 </nav>
               </div>
@@ -99,19 +91,7 @@ export default function Product1() {
               aria-labelledby="nav-sale-tab"
             >
               <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
-                <FilterShopBox2 itemStart={20} itemEnd={30} />
-              </div>
-            </div>
-            <div
-              className={
-                activeIndex == 4 ? "tab-pane fade show active" : "tab-pane fade"
-              }
-              id="nav-rate"
-              role="tabpanel"
-              aria-labelledby="nav-rate-tab"
-            >
-              <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
-                <FilterShopBox2 itemStart={15} itemEnd={25} />
+                <FilterShopBox2 itemStart={5} itemEnd={15} />
               </div>
             </div>
           </div>
