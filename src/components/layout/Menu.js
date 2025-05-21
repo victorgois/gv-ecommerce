@@ -1,15 +1,27 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Menu() {
-    const router = useRouter()
+  const router = useRouter();
 
-    return (
-        <>
-            <ul className="sub-menu">
-                <Link className={router.pathname == "/" ? "active" : ""}>Home Default</Link>
-                <Link className={router.pathname == "/index-2" ? "active" : ""}>Home Interior</Link>
-            </ul>
-        </>
-    )
+  return (
+    <>
+      <div className="tpmenu__nav">
+        <ul>
+          <li>
+            <Link href="/">Página Inicial</Link>
+          </li>
+          <li>
+            <Link href="/shop">Loja</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contato</Link>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
 }

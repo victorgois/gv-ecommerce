@@ -4,9 +4,6 @@ import CartShow from "@/components/elements/CartShow";
 import WishListShow from "@/components/elements/WishListShow";
 import Link from "next/link";
 import { useState } from "react";
-import HeaderMobSticky from "../HeaderMobSticky";
-import HeaderSticky from "../HeaderSticky";
-import HeaderTabSticky from "../HeaderTabSticky";
 
 export default function Header1({
   scroll,
@@ -42,11 +39,15 @@ export default function Header1({
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-3">
-                {/* <div className="logo">
+                <div className="logo">
                   <Link href="/">
-                    <img src="/assets/img/logo/logo.png" alt="logo" />
+                    <img
+                      src="/assets/img/logo/logo.svg"
+                      alt="logo"
+                      style={{ width: "100%", height: "100%" }}
+                    />
                   </Link>
-                </div> */}
+                </div>
               </div>
               <div className="col-xl-10 col-lg-9">
                 <div className="header-meta-info d-flex align-items-center justify-content-between">
@@ -155,10 +156,10 @@ export default function Header1({
                           </Link>
                           <ul className="submenu">
                             <li>
-                              <Link href="/shop-2">{t("Cigarreiras")}</Link>
+                              <Link href="/shop">{t("Cigarreiras")}</Link>
                             </li>
                             <li>
-                              <Link href="/shop-2">{t("Cachimbos")}</Link>
+                              <Link href="/shop">{t("Cachimbos")}</Link>
                             </li>
                             <li>
                               <Link href="/shop">{t("Cortadores")}</Link>
@@ -236,170 +237,22 @@ export default function Header1({
                 </div>
                 <div className="col-xl-7 col-lg-6">
                   <div className="main-menu">
-                    <nav id="mobile-menu">
+                    <div className="tpmenu__nav">
                       <ul>
                         <li className="has-dropdown">
-                          <Link href="/">{t("Home")}</Link>
-                          <ul className="submenu">
-                            <li>
-                              <Link href="/">{t("Tabacaria Tradicional")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/index-2">
-                                {t("Tabacaria Moderna")}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/index-3">
-                                {t("Cigarros Artesanais")}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/index-4">
-                                {t("Tabacos Especiais")}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/index-5">
-                                {t("Acessórios Premium")}
-                              </Link>
-                            </li>
-                          </ul>
+                          <Link href="/">Página Inicial</Link>
                         </li>
                         <li className="has-dropdown">
-                          <Link href="/shop">{t("Shop")}</Link>
-                          <ul className="submenu">
-                            <li>
-                              <Link href="/shop">{t("Shop")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-2">{t("Shop 2")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-details">
-                                {t("Shop Details")}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-details-2">
-                                {t("Shop Details 2")}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-location">
-                                {t("Shop Location")}
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/cart">{t("Cart")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/sign-in">{t("Sign In")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/checkout">{t("Checkout")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/wishlist">{t("Wishlist")}</Link>
-                            </li>
-                            <li>
-                              <Link href="/track">{t("Product Track")}</Link>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="has-dropdown has-megamenu">
-                          <Link href="/about">{t("Pages")}</Link>
-                          <ul className="submenu mega-menu">
-                            <li>
-                              <a className="mega-menu-title">
-                                {t("Tipos de Produtos")}
-                              </a>
-                              <ul>
-                                <li>
-                                  <Link href="/shop">
-                                    {t("Cigarros de Palha")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/shop-2">
-                                    {t("Tabacos Especiais")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/shop-details">
-                                    {t("Cachimbos")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/shop-details-2">
-                                    {t("Acessórios Premium")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/shop-location">
-                                    {t("Kits Exclusivos")}
-                                  </Link>
-                                </li>
-                              </ul>
-                            </li>
-                            <li>
-                              <a className="mega-menu-title">
-                                {t("Informações")}
-                              </a>
-                              <ul>
-                                <li>
-                                  <Link href="/about">{t("Sobre Nós")}</Link>
-                                </li>
-                                <li>
-                                  <Link href="/cart">{t("Carrinho")}</Link>
-                                </li>
-                                <li>
-                                  <Link href="/checkout">
-                                    {t("Finalizar Compra")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/sign-in">{t("Entrar")}</Link>
-                                </li>
-                                <li>
-                                  <Link href="/sign-in">{t("Cadastrar")}</Link>
-                                </li>
-                              </ul>
-                            </li>
-                            <li>
-                              <a className="mega-menu-title">
-                                {t("Utilitários")}
-                              </a>
-                              <ul>
-                                <li>
-                                  <Link href="/track">
-                                    {t("Rastrear Pedido")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/wishlist">
-                                    {t("Lista de Desejos")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/not-found">
-                                    {t("404 / Erro")}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link href="/coming-soon">
-                                    {t("Lançamentos")}
-                                  </Link>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
+                          <Link href="/shop">Loja</Link>
                         </li>
                         <li className="has-dropdown">
-                          <Link href="/contact">{t("Contact")}</Link>
+                          <Link href="/blog">Blog</Link>
+                        </li>
+                        <li>
+                          <Link href="/contact">Contato</Link>
                         </li>
                       </ul>
-                    </nav>
+                    </div>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-3">
@@ -433,25 +286,6 @@ export default function Header1({
           </div>
         </div>
       </header>
-      <HeaderSticky
-        scroll={scroll}
-        isCartSidebar={isCartSidebar}
-        handleCartSidebar={handleCartSidebar}
-      />
-      <HeaderTabSticky
-        scroll={scroll}
-        isMobileMenu={isMobileMenu}
-        handleMobileMenu={handleMobileMenu}
-        isCartSidebar={isCartSidebar}
-        handleCartSidebar={handleCartSidebar}
-      />
-      <HeaderMobSticky
-        scroll={scroll}
-        isMobileMenu={isMobileMenu}
-        handleMobileMenu={handleMobileMenu}
-        isCartSidebar={isCartSidebar}
-        handleCartSidebar={handleCartSidebar}
-      />
     </>
   );
 }

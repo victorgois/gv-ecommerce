@@ -2,8 +2,8 @@
     {
         "id": 1,
         "title": "Filtro OCB Premium",
-        "imgf": "filter-ocb-1.jpg",
-        "imgb": "filter-ocb-2.jpg",
+        "imgf": "product-10.jpg",
+        "imgb": "product-11.jpg",
         "category": [
             {
                 "type": "Filtros"
@@ -52,8 +52,8 @@
     {
         "id": 3,
         "title": "Marlboro Red Box",
-        "imgf": "marlboro-1.jpg",
-        "imgb": "marlboro-2.jpg",
+        "imgf": "product-3.jpg",
+        "imgb": "product-4.jpg",
         "category": [
             {
                 "type": "Cigarros"

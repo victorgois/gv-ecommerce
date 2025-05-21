@@ -12,7 +12,7 @@ export default function Footer1() {
                   <div className="footer-widget footer-col-1 mb-40">
                     {/* <div className="footer-logo mb-30">
                       <Link href="/">
-                        <img src="/assets/img/logo/logo.png" alt="logo" />
+                        <img src="/assets/img/logo/logo.svg" alt="logo" />
                       </Link>
                     </div> */}
                     <div className="footer-content">
